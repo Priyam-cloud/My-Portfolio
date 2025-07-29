@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyam Kumari - Data Annotation Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffd700, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #ff6b6b, #ffd700);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            background: white;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background: #f8f9fa;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .company {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .duration {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .experience-item li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Education & Certifications */
+        .education-item, .cert-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Download CV Styles */
+        .download-cv {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .download-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ffd700);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Priyam Kumari</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Priyam Kumari</h1>
+            <p>Data Annotation Engineer & AI Tool Specialist | Transforming Data into Intelligence</p>
+            <div class="cta-buttons">
+                <a href="#about" class="btn btn-primary">Learn More</a>
+                <a href="#experience" class="btn btn-secondary">View Experience</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" class="fade-in">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="profile-img">PK</div>
+                    <div class="contact-info">
+                        <p><strong>📍</strong> Sasaram, Bihar 821115</p>
+                        <p><strong>📞</strong> +91-620-622-3890</p>
+                        <p><strong>✉️</strong> priyam.kumari.tiwari@gmail.com</p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>Highly motivated Data Annotation Engineer and Analyst with extensive experience in data labelling, annotation, AI model training, and project management. Proven expertise in data analysis, automation using Python, and quality assurance.</p>
+                    <br>
+                    <p>Passionate about optimizing workflows and delivering high-quality labelled data to improve machine learning models. Adept at working in fast-paced environments while ensuring 99.9% annotation accuracy.</p>
+                    <br>
+                    <p>My expertise spans across various domains including computer vision, natural language processing, and automated data processing workflows.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="fade-in">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="job-title">Annotation Engineer</div>
+                        <div class="company">KoiReader</div>
+                    </div>
+                    <div class="duration">May 2023 - Present</div>
+                </div>
+                <ul>
+                    <li>Led data annotation and labelling processes to enhance AI model training and accuracy</li>
+                    <li>Developed Python scripts to automate workflows, reducing work hours and increasing efficiency</li>
+                    <li>Managed project timelines, deadlines, and resource allocation for optimal productivity</li>
+                    <li>Resolved escalations and ensured smooth team operations</li>
+                    <li>Automated tasks such as extracting frames from videos, rotating and cropping images using JSON metadata</li>
+                    <li>Implemented sorting classes alphabetically in JSON files and generating AWS S3 data links</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="job-title">Data Analyst</div>
+                        <div class="company">Excavate Research & Analysis Pvt. Ltd.</div>
+                    </div>
+                    <div class="duration">May 2022 – April 2023</div>
+                </div>
+                <ul>
+                    <li>Analysed market research data and created insightful tabulations</li>
+                    <li>Interpreted and tracked survey responses to assess consumer behaviour trends</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="job-title">Data Annotator</div>
+                        <div class="company">Digiyoda Pvt. Ltd.</div>
+                    </div>
+                    <div class="duration">Jan 2021 - April 2021</div>
+                </div>
+                <ul>
+                    <li>Conducted image and text annotation to identify fake websites on social media</li>
+                    <li>Verified product categories, pricing, and linked URLs for accuracy in e-commerce data</li>
+                    <li>Collaborated with teams to enhance AI dataset quality</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="fade-in">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Data & AI</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Data Annotation</span>
+                        <span class="skill-tag">Data Labelling</span>
+                        <span class="skill-tag">AI Model Training</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Data Visualization</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Automation</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Quantum Programming</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Advanced Excel</span>
+                        <span class="skill-tag">IBM SPSS</span>
+                        <span class="skill-tag">Jupyter Notebook</span>
+                        <span class="skill-tag">AWS S3</span>
+                        <span class="skill-tag">Bootstrap</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Core Competencies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Quality Assurance</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Critical Thinking</span>
+                        <span class="skill-tag">Project Management</span>
+                        <span class="skill-tag">Manual Testing</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="fade-in">
+            <h2 class="section-title">Education & Certifications</h2>
+            
+            <div class="education-item">
+                <h3>Bachelor of Engineering in Computer Science</h3>
+                <p><strong>Deenbandhu Chhotu Ram University of Science and Technology</strong></p>
+                <p>Murthal, Sonepat (Haryana) | Sep 2018 - April 2022</p>
+            </div>
+
+            <div class="cert-item">
+                <h3>Data Analytics Training - IBM Skill Build</h3>
+                <ul>
+                    <li>Learned Python and Anaconda Jupyter Notebook</li>
+                    <li>Implemented Loan Eligibility Prediction Model using machine learning libraries</li>
+                </ul>
+            </div>
+
+            <div class="cert-item">
+                <h3>Web Development Training - Internshala Trainings</h3>
+                <ul>
+                    <li>Learned HTML, CSS, Bootstrap, PHP, SQL</li>
+                    <li>Developed an e-cart website for an e-commerce platform</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="fade-in">
+            <h2 class="section-title">Key Projects & Achievements</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Automated Annotation Workflow</h3>
+                    <p>Developed an automated annotation workflow that improved efficiency and accuracy for AI model training processes.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Data Validation Project</h3>
+                    <p>Led a comprehensive data validation project that identified and corrected errors in AI datasets, significantly improving model precision.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Python Automation Scripts</h3>
+                    <p>Designed Python-based automation scripts for annotation and data processing, reducing manual work by 40%.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Loan Eligibility Prediction Model</h3>
+                    <p>Implemented a machine learning model for loan eligibility prediction using Python and various ML libraries.</p>
+                </div>
+                <div class="project-card">
+                    <h3>E-commerce Platform</h3>
+                    <p>Developed an e-cart website for an e-commerce platform using HTML, CSS, Bootstrap, PHP, and SQL.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Priyam Kumari. All rights reserved. | Data Annotation Engineer & AI Tool Specialist</p>
+            <p>Languages: English (Fluent) | Hindi (Fluent)</p>
+        </div>
+    </footer>
+
+    <!-- Download CV Button -->
+    <div class="download-cv">
+        <button class="download-btn" onclick="downloadCV()" title="Download CV">
+            ⬇
+        </button>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(102, 126, 234, 0.95)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.1)';
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease';
+            observer.observe(el);
+        });
+
+        // Download CV function
+        function downloadCV() {
+            // Create CV content
+            const cvContent = `
+PRIYAM KUMARI
+Data Annotation Engineer
+
+Contact Information:
+📍 Sasaram, Bihar 821115
+📞 +91-620-622-3890
+✉️ priyam.kumari.tiwari@gmail.com
+
+PROFESSIONAL SUMMARY
+Highly motivated Data Annotation Engineer and Analyst with extensive experience in data labelling, annotation, AI model training, and project management. Proven expertise in data analysis, automation using Python, and quality assurance. Passionate about optimizing workflows and delivering high-quality labelled data to improve machine learning models. Adept at working in fast-paced environments while ensuring 99.9% annotation accuracy.
+
+WORK EXPERIENCE
+
+Annotation Engineer | KoiReader | May 2023 - Present
+• Led data annotation and labelling processes to enhance AI model training and accuracy
+• Developed Python scripts to automate workflows, reducing work hours and increasing efficiency
+• Managed project timelines, deadlines, and resource allocation for optimal productivity
+• Resolved escalations and ensured smooth team operations
+• Automated tasks such as extracting frames from videos, rotating and cropping images using JSON metadata, sorting classes alphabetically in JSON files, and generating AWS S3 data links
+
+Data Analyst | Excavate Research & Analysis Pvt. Ltd. | May 2022 – April 2023
+• Analysed market research data and created insightful tabulations
+• Interpreted and tracked survey responses to assess consumer behaviour trends
+
+Data Annotator | Digiyoda Pvt. Ltd. | Jan 2021 - April 2021
+• Conducted image and text annotation to identify fake websites on social media
+• Verified product categories, pricing, and linked URLs for accuracy in e-commerce data
+• Collaborated with teams to enhance AI dataset quality
+
+EDUCATION
+Bachelor of Engineering in Computer Science
+Deenbandhu Chhotu Ram University of Science and Technology, Murthal, Sonepat (Haryana)
+Sep 2018 - April 2022
+
+SKILLS & TOOLS
+• Data Annotation & Labelling (Image, Video, Text)
+• Data Visualization & Analysis
+• Python & Automation
+• Advanced Excel
+• IBM SPSS
+• AI & Machine Learning Model Training
+• Manual Testing & Quality Assurance
+• Problem-Solving & Critical Thinking
+• Using AI Tools to Solve Complex Problems
+• Quantum Programming
+
+CERTIFICATIONS & TRAINING
+Data Analytics Training | IBM Skill Build
+• Learned Python and Anaconda Jupyter Notebook
+• Implemented Loan Eligibility Prediction Model using machine learning libraries
+
+Web Development Training | Internshala Trainings
+• Learned HTML, CSS, Bootstrap, PHP, SQL
+• Developed an e-cart website for an e-commerce platform
+
+ACHIEVEMENTS & PROJECTS
+• Developed an automated annotation workflow that improved efficiency and accuracy
+• Led a data validation project that identified and corrected errors in AI datasets, significantly improving model precision
+• Designed Python-based automation scripts for annotation and data processing, reducing manual work by 40%
+
+LANGUAGES
+• English (Fluent)
+• Hindi (Fluent)
+            `;
+
+            // Create and download the file
+            const element = document.createElement('a');
+            const file = new Blob([cvContent], {type: 'text/plain'});
+            element.href = URL.createObjectURL(file);
+            element.download = 'Priyam_Kumari_Resume.txt';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+            
+            // Show download notification
+            showNotification('CV downloaded successfully!');
+        }
+
+        // Notification function
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(45deg, #4CAF50, #45a049);
+                color: white;
+                padding: 15px 20px;
+                border-radius: 5px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                z-index: 10000;
+                font-weight: 500;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Add CSS animations for notifications
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add typing effect to hero text
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect when page loads
+        window.addEventListener('load', function() {
+            const heroTitle = document.querySelector('.hero h1');
+            const heroText = document.querySelector('.hero p');
+            
+            setTimeout(() => {
+                typeWriter(heroTitle, 'Priyam Kumari', 150);
+            }, 500);
+            
+            setTimeout(() => {
+                typeWriter(heroText, 'Data Annotation Engineer & AI Tool Specialist | Transforming Data into Intelligence', 50);
+            }, 2500);
+        });
+    </script>
+</body>
+</html>
