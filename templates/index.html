@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Priyam Kumari - Data Annotation Engineer</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -182,17 +181,6 @@
             background-clip: text;
         }
 
-        /* ATS Optimization Notice */
-        .ats-notice {
-            background: linear-gradient(45deg, #4CAF50, #45a049);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            margin: 2rem 0;
-            border-radius: 10px;
-            font-weight: 500;
-        }
-
         /* About Section */
         .about-content {
             display: grid;
@@ -220,23 +208,6 @@
             overflow: hidden;
         }
 
-        .profile-img::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
         .contact-info {
             margin-top: 2rem;
             text-align: left;
@@ -249,36 +220,6 @@
             gap: 0.5rem;
         }
 
-        /* ATS Keywords Section */
-        .ats-keywords {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 5px solid #4CAF50;
-        }
-
-        .ats-keywords h3 {
-            color: #4CAF50;
-            margin-bottom: 1rem;
-        }
-
-        .keywords-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .keyword-tag {
-            background: #4CAF50;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
         /* Experience Section */
         .experience-item {
             background: #f8f9fa;
@@ -287,7 +228,6 @@
             border-radius: 15px;
             border-left: 5px solid #667eea;
             transition: transform 0.3s ease;
-            position: relative;
         }
 
         .experience-item:hover {
@@ -349,17 +289,6 @@
             color: #667eea;
         }
 
-        /* Quantified achievements */
-        .achievement {
-            background: linear-gradient(45deg, #ff6b6b, #ffd700);
-            color: white;
-            padding: 0.2rem 0.5rem;
-            border-radius: 15px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            margin-left: 0.5rem;
-        }
-
         /* Skills Section */
         .skills-grid {
             display: grid;
@@ -373,24 +302,6 @@
             border-radius: 15px;
             text-align: center;
             transition: transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-category::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(102,126,234,0.1) 0%, transparent 70%);
-            transform: scale(0);
-            transition: transform 0.3s ease;
-        }
-
-        .skill-category:hover::before {
-            transform: scale(1);
         }
 
         .skill-category:hover {
@@ -401,8 +312,6 @@
             color: #667eea;
             margin-bottom: 1rem;
             font-size: 1.3rem;
-            position: relative;
-            z-index: 1;
         }
 
         .skill-tags {
@@ -410,8 +319,6 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             justify-content: center;
-            position: relative;
-            z-index: 1;
         }
 
         .skill-tag {
@@ -427,30 +334,6 @@
             transform: scale(1.05);
         }
 
-        /* Proficiency levels */
-        .skill-level {
-            display: flex;
-            align-items: center;
-            margin-top: 0.5rem;
-            justify-content: center;
-        }
-
-        .skill-bar {
-            width: 100px;
-            height: 6px;
-            background: #e0e0e0;
-            border-radius: 3px;
-            overflow: hidden;
-            margin-left: 0.5rem;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 3px;
-            transition: width 2s ease;
-        }
-
         /* Education & Certifications */
         .education-item, .cert-item {
             background: #f8f9fa;
@@ -459,18 +342,6 @@
             border-radius: 10px;
             border-left: 4px solid #ffd700;
             position: relative;
-        }
-
-        .education-item::before, .cert-item::before {
-            content: '🎓';
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .cert-item::before {
-            content: '📜';
         }
 
         .grade {
@@ -495,23 +366,6 @@
             padding: 2rem;
             border-radius: 15px;
             transition: transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(102,126,234,0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .project-card:hover::before {
-            left: 100%;
         }
 
         .project-card:hover {
@@ -540,42 +394,6 @@
             padding: 0.2rem 0.5rem;
             border-radius: 10px;
             font-size: 0.8rem;
-        }
-
-        /* Achievement badges */
-        .achievements-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: rgb(5, 4, 4);
-            padding: 3rem 0;
-            margin: 2rem 0;
-            border-radius: 20px;
-            text-align: center;
-        }
-
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .achievement-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        .achievement-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .achievement-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ffd700;
         }
 
         /* Languages section */
@@ -645,15 +463,6 @@
             animation: fadeInUp 0.8s ease;
         }
 
-        /* Progress bars animation */
-        @keyframes progressLoad {
-            from { width: 0; }
-        }
-
-        .skill-progress.animate {
-            animation: progressLoad 2s ease;
-        }
-
         /* Download buttons */
         .download-section {
             position: fixed;
@@ -689,26 +498,6 @@
 
         .pdf-btn {
             background: linear-gradient(45deg, #4CAF50, #45a049);
-        }
-
-        /* ATS Score indicator */
-        /*.ats-score {
-            position: fixed;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-            background: #4CAF50;
-            color: white;
-            padding: 1rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            z-index: 999;
-        }
-
-        .score-number {
-            font-size: 2rem;
-            font-weight: bold;
         }
 
         /* Responsive */
@@ -752,15 +541,6 @@
                 align-items: center;
             }
 
-            .ats-score {
-                position: relative;
-                left: auto;
-                top: auto;
-                transform: none;
-                margin: 1rem auto;
-                width: fit-content;
-            }
-
             .download-section {
                 position: relative;
                 bottom: auto;
@@ -771,7 +551,7 @@
             }
         }
 
-        /* Print styles for ATS */
+        /* Print styles */
         @media print {
             body {
                 background: white !important;
@@ -779,7 +559,7 @@
                 font-family: Arial, sans-serif !important;
             }
             
-            .hero, header, footer, .download-section, .ats-score {
+            .hero, header, footer, .download-section {
                 display: none !important;
             }
             
@@ -789,21 +569,10 @@
                 margin: 1rem 0 !important;
                 page-break-inside: avoid;
             }
-            
-            .container {
-                max-width: none !important;
-                padding: 0 !important;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- ATS Score Indicator -->
-    <!-- <div class="ats-score">
-        <div class="score-number">100%</div>
-        <div>ATS Score</div>
-    </div> -->
-
     <!-- Header -->
     <header>
         <nav class="container">
@@ -820,7 +589,6 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#achievements">Achievements</a></li>
             </ul>
         </nav>
     </header>
@@ -829,7 +597,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Priyam Kumari</h1>
-            <p>Senior Annotation Engineer & AI Tool Specialist | Machine Learning Beginner | Python Developer |Prompt Engineer| Data Analyst</p>
+            <p>Data Annotation Engineer | Team Lead | Data Analyst (SPSS) | Python Developer</p>
             <div class="cta-buttons">
                 <a href="#about" class="btn btn-primary">Learn More</a>
                 <a href="#experience" class="btn btn-secondary">View Experience</a>
@@ -838,11 +606,6 @@
     </section>
 
     <div class="container">
-        <!-- ATS Optimization Notice -->
-        <div class="ats-notice">
-            ✅ This resume is 100% ATS-optimized with proper keywords, formatting, and structure for maximum visibility
-        </div>
-
         <!-- About Section -->
         <section id="about" class="fade-in">
             <h2 class="section-title">Professional Summary</h2>
@@ -858,30 +621,11 @@
                     </div>
                 </div>
                 <div class="about-text">
-                    <p><strong>Highly skilled Data Annotation Engineer</strong> with <strong>3+ years</strong> of expertise in data labeling, annotation, AI model training, and project management. Proven track record of improving machine learning model accuracy by <span class="achievement">40%</span> through high-quality data annotation and automated workflows.</p>
+                    <p><strong>Dedicated Data Annotation Engineer</strong> with 3+ years of hands-on experience in data labeling, quality assurance, and team leadership. Proven track record in managing annotation projects and maintaining high-quality data standards for machine learning applications.</p>
                     <br>
-                    <p><strong>Core competencies include:</strong> Computer Vision, Natural Language Processing, Python automation, quality assurance, and cross-functional team leadership. Experienced in managing annotation projects worth <span class="achievement">$100K+</span> and delivering <span class="achievement">99.9% accuracy</span> in data labeling tasks.</p>
+                    <p><strong>Core competencies include:</strong> Data annotation and labeling, Python scripting for automation, statistical analysis using SPSS, advanced Excel operations, and leading cross-functional teams to deliver quality results on schedule.</p>
                     <br>
-                    <p><strong>Technical expertise spans:</strong> Machine Learning frameworks (TensorFlow, PyTorch), cloud platforms (AWS S3, Google Cloud), annotation tools (LabelImg, VGG Image Annotator), and programming languages (Python, SQL, PHP, HTML/CSS).</p>
-                </div>
-            </div>
-
-            <!-- ATS Keywords Section -->
-            <div class="ats-keywords">
-                <h3>🎯 Incorporated targeted keywords</h3>
-                <div class="keywords-grid">
-                    <div class="keyword-tag">Data Annotation</div>
-                    <div class="keyword-tag">Machine Learning</div>
-                    <div class="keyword-tag">Python Programming</div>
-                    <div class="keyword-tag">Computer Vision</div>
-                    <div class="keyword-tag">Natural Language Processing</div>
-                    <div class="keyword-tag">Quality Assurance</div>
-                    <div class="keyword-tag">Project Management</div>
-                    <div class="keyword-tag">AI Model Training</div>
-                    <div class="keyword-tag">Data Visualization</div>
-                    <div class="keyword-tag">AWS Cloud Services</div>
-                    <div class="keyword-tag">Automation Scripts</div>
-                    <div class="keyword-tag">Deep Learning</div>
+                    <p><strong>Technical expertise spans:</strong> Python programming, data processing workflows, IBM SPSS for statistical analysis, advanced Excel functions, JSON data handling, and annotation tools like LabelImg and VGG Image Annotator.</p>
                 </div>
             </div>
         </section>
@@ -900,13 +644,12 @@
                     <div class="duration">May 2023 - Present</div>
                 </div>
                 <ul>
-                    <li>Led end-to-end data annotation and labeling processes for <strong>computer vision and NLP projects</strong>, improving AI model training accuracy by <span class="achievement">40%</span></li>
-                    <li>Developed and implemented <strong>Python automation scripts</strong> for image processing, reducing manual annotation time by <span class="achievement">60 hours/week</span></li>
-                    <li>Managed cross-functional teams of <strong>15+ annotators</strong>, ensuring project delivery within tight deadlines and budget constraints of <span class="achievement">$100K+</span></li>
-                    <li>Optimized annotation workflows using <strong>JSON metadata processing</strong>, automated frame extraction from videos, and image transformation tasks</li>
-                    <li>Implemented quality assurance protocols achieving <span class="achievement">99.9% annotation accuracy</span> across all datasets</li>
-                    <li>Collaborated with <strong>ML Engineers and Data Scientists</strong> to define annotation guidelines and improve model performance</li>
-                    <li>Utilized <strong>AWS S3</strong> for data storage and management, generating automated data links and maintaining organized datasets</li>
+                    <li>Lead data annotation projects for computer vision and NLP applications, ensuring consistent quality standards across all datasets</li>
+                    <li>Develop Python scripts to automate repetitive annotation tasks, streamlining workflow processes and reducing manual effort</li>
+                    <li>Coordinate with team members to establish annotation guidelines and maintain quality control protocols</li>
+                    <li>Process and organize large datasets using JSON metadata, ensuring proper data structure and accessibility</li>
+                    <li>Collaborate with development teams to understand project requirements and deliver annotated data according to specifications</li>
+                    <li>Manage file organization and data storage using cloud platforms, maintaining efficient data management systems</li>
                 </ul>
             </div>
 
@@ -920,11 +663,12 @@
                     <div class="duration">May 2022 – April 2023</div>
                 </div>
                 <ul>
-                    <li>Analyzed <strong>market research data</strong> for <span class="achievement">50+ clients</span>, creating comprehensive tabulations and statistical insights</li>
-                    <li>Interpreted and tracked <strong>survey responses</strong> from <span class="achievement">10,000+ participants</span> to assess consumer behavior trends</li>
-                    <li>Developed <strong>data visualization dashboards</strong> using Excel and Python, improving client reporting efficiency by <span class="achievement">35%</span></li>
-                    <li>Collaborated with research teams to design <strong>survey methodologies</strong> and ensure data quality standards</li>
-                    <li>Presented findings to stakeholders through <strong>detailed reports and presentations</strong></li>
+                    <li>Analyzed market research data using IBM SPSS, creating detailed statistical reports and data interpretations</li>
+                    <li>Processed survey responses and consumer behavior data, applying appropriate statistical methods for analysis</li>
+                    <li>Created comprehensive data tabulations and cross-tabulations for client reporting requirements</li>
+                    <li>Collaborated with research teams to ensure data quality and methodological accuracy</li>
+                    <li>Prepared client presentations and reports based on statistical findings and data insights</li>
+                    <li>Maintained detailed documentation of analysis procedures and statistical methodologies used</li>
                 </ul>
             </div>
 
@@ -938,11 +682,11 @@
                     <div class="duration">Jan 2021 - April 2021</div>
                 </div>
                 <ul>
-                    <li>Conducted <strong>image and text annotation</strong> for social media fraud detection, processing <span class="achievement">5,000+ images</span> weekly</li>
-                    <li>Verified <strong>e-commerce product data</strong> including categories, pricing, and URL validation with <span class="achievement">98% accuracy</span></li>
-                    <li>Collaborated with <strong>AI development teams</strong> to enhance dataset quality for machine learning models</li>
-                    <li>Utilized <strong>annotation tools</strong> including LabelImg, VGG Image Annotator, and custom web-based platforms</li>
-                    <li>Maintained detailed documentation and quality metrics for all annotation projects</li>
+                    <li>Performed image and text annotation tasks for machine learning projects, focusing on accuracy and consistency</li>
+                    <li>Verified and validated e-commerce product data including categories, pricing, and URL accuracy</li>
+                    <li>Maintained detailed logs of annotation progress and quality metrics</li>
+                    <li>Collaborated with team members to resolve annotation conflicts and ensure data consistency</li>
+                    <li>Used various annotation tools including web-based platforms for different project requirements</li>
                 </ul>
             </div>
         </section>
@@ -952,109 +696,68 @@
             <h2 class="section-title">Technical Skills & Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>🤖 AI & Machine Learning</h3>
+                    <h3>🏷️ Data Annotation</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Data Annotation</span>
-                        <span class="skill-tag">Data Labeling</span>
-                        <span class="skill-tag">Computer Vision</span>
-                        <span class="skill-tag">NLP</span>
-                        <span class="skill-tag">Deep Learning</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">PyTorch</span>
-                    </div>
-                    <div class="skill-level">
-                        <span>Expert</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%"></div>
-                        </div>
+                        <span class="skill-tag">Image Labeling</span>
+                        <span class="skill-tag">Text Annotation</span>
+                        <span class="skill-tag">Data Validation</span>
+                        <span class="skill-tag">Quality Control</span>
+                        <span class="skill-tag">LabelImg</span>
+                        <span class="skill-tag">VGG Annotator</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3>💻 Programming & Development</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">JSON</span>
-                        <span class="skill-tag">REST APIs</span>
-                    </div>
-                    <div class="skill-level">
-                        <span>Advanced</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
+                        <span class="skill-tag">JSON Processing</span>
+                        <span class="skill-tag">SQL Basics</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>☁️ Cloud & Tools</h3>
+                    <h3>📊 Data Analysis</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">AWS S3</span>
-                        <span class="skill-tag">Google Cloud</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">IBM SPSS</span>
+                        <span class="skill-tag">Advanced Excel</span>
+                        <span class="skill-tag">Statistical Analysis</span>
+                        <span class="skill-tag">Data Visualization</span>
+                        <span class="skill-tag">Cross-tabulation</span>
+                        <span class="skill-tag">Report Generation</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>🛠️ Tools & Platforms</h3>
+                    <div class="skill-tags">
                         <span class="skill-tag">Jupyter Notebook</span>
                         <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">Linux</span>
-                    </div>
-                    <div class="skill-level">
-                        <span>Proficient</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">Cloud Storage</span>
+                        <span class="skill-tag">File Management</span>
+                        <span class="skill-tag">Documentation</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>📊 Data Analysis & Visualization</h3>
+                    <h3>👥 Leadership & Management</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Advanced Excel</span>
-                        <span class="skill-tag">IBM SPSS</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">Tableau</span>
-                        <span class="skill-tag">Power BI</span>
-                    </div>
-                    <div class="skill-level">
-                        <span>Expert</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 92%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>🔧 Annotation Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">LabelImg</span>
-                        <span class="skill-tag">VGG Image Annotator</span>
-                        <span class="skill-tag">Labelbox</span>
-                        <span class="skill-tag">Amazon SageMaker</span>
-                        <span class="skill-tag">CVAT</span>
-                        <span class="skill-tag">Prodigy</span>
-                    </div>
-                    <div class="skill-level">
-                        <span>Expert</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 98%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>🎯 Core Competencies</h3>
-                    <div class="skill-tags">
+                        <span class="skill-tag">Team Coordination</span>
+                        <span class="skill-tag">Project Planning</span>
                         <span class="skill-tag">Quality Assurance</span>
-                        <span class="skill-tag">Project Management</span>
-                        <span class="skill-tag">Team Leadership</span>
-                        <span class="skill-tag">Problem Solving</span>
-                        <span class="skill-tag">Process Optimization</span>
-                        <span class="skill-tag">Agile Methodology</span>
+                        <span class="skill-tag">Process Improvement</span>
+                        <span class="skill-tag">Training</span>
+                        <span class="skill-tag">Communication</span>
                     </div>
-                    <div class="skill-level">
-                        <span>Expert</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 94%"></div>
-                        </div>
+                </div>
+                <div class="skill-category">
+                    <h3>🔬 Specialized Knowledge</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Quantum Computing Basics</span>
+                        <span class="skill-tag">Machine Learning Concepts</span>
+                        <span class="skill-tag">Data Processing</span>
+                        <span class="skill-tag">Research Methodology</span>
+                        <span class="skill-tag">Statistical Methods</span>
                     </div>
                 </div>
             </div>
@@ -1068,163 +771,103 @@
                 <h3>Bachelor of Engineering (B.E.) in Computer Science Engineering</h3>
                 <p><strong>Deenbandhu Chhotu Ram University of Science and Technology</strong></p>
                 <p>Murthal, Sonepat, Haryana, India | Sep 2018 - April 2022</p>
-                <p><strong>CGPA:</strong> <span class="grade">7.8/10</span> | <strong>Relevant Coursework:</strong> Data Structures, Algorithms, Machine Learning, Database Management, Software Engineering</p>
+                <p><strong>CGPA:</strong> <span class="grade">7.8/10</span> | <strong>Relevant Coursework:</strong> Data Structures, Algorithms, Database Management, Software Engineering</p>
             </div>
 
             <div class="cert-item">
-                <h3>🏆 IBM Data Analytics Professional Certificate</h3>
+                <h3>🏆 IBM Data Analytics with Python and SQL</h3>
                 <p><strong>IBM SkillsBuild</strong> | 2023</p>
                 <ul>
-                    <li>Mastered Python programming for data analysis using Pandas, NumPy, and Matplotlib</li>
-                    <li>Developed machine learning models using scikit-learn and TensorFlow</li>
-                    <li>Created a <strong>Loan Eligibility Prediction Model</strong> achieving 87% accuracy</li>
-                    <li>Gained expertise in Jupyter Notebook, Anaconda, and data visualization techniques</li>
+                    <li>Completed comprehensive training in Python programming for data analysis</li>
+                    <li>Learned data manipulation using Pandas, NumPy, and Matplotlib libraries</li>
+                    <li>Developed skills in data visualization and statistical analysis</li>
+                    <li>Gained experience with Jupyter Notebook and Anaconda environment</li>
                 </ul>
             </div>
 
             <div class="cert-item">
-                <h3>🌐 Full Stack Web Development Certificate</h3>
+                <h3>🌐 Full Stack Web Development</h3>
                 <p><strong>Internshala Trainings</strong> | 2022</p>
                 <ul>
-                    <li>Built responsive web applications using HTML5, CSS3, Bootstrap, and JavaScript</li>
-                    <li>Developed backend systems with PHP and MySQL database integration</li>
-                    <li>Created an <strong>E-commerce Shopping Cart Website</strong> with full CRUD functionality</li>
-                    <li>Implemented user authentication, payment gateway integration, and inventory management</li>
+                    <li>Built responsive web applications using HTML5, CSS3, and JavaScript</li>
+                    <li>Developed backend functionality with PHP and MySQL integration</li>
+                    <li>Created functional web projects with user interface design</li>
+                    <li>Implemented form handling and data validation techniques</li>
                 </ul>
             </div>
 
             <div class="cert-item">
-                <h3>☁️ AWS Cloud Practitioner (In Progress)</h3>
-                <p><strong>Amazon Web Services</strong> | Expected: 2025</p>
-                <ul>
-                    <li>Learning cloud computing fundamentals and AWS core services</li>
-                    <li>Gaining expertise in S3, EC2, Lambda, and machine learning services</li>
-                </ul>
-            </div>
-
-            <div class="cert-item">
-                <h3>🔬 Quantum Computing Fundamentals</h3>
+                <h3>🔬 Quantum Computing Introduction</h3>
                 <p><strong>IBM Qiskit</strong> | 2023</p>
                 <ul>
-                    <li>Introduction to quantum algorithms and quantum machine learning</li>
-                    <li>Hands-on experience with quantum programming using Qiskit</li>
+                    <li>Introduction to quantum computing principles and basic quantum algorithms</li>
+                    <li>Hands-on experience with Qiskit framework and quantum programming concepts</li>
                 </ul>
             </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects" class="fade-in">
-            <h2 class="section-title">Key Projects & Portfolio</h2>
+            <h2 class="section-title">Key Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>🤖 Automated Computer Vision Annotation Pipeline</h3>
-                    <p><strong>Impact:</strong> Reduced annotation time by 60% and improved accuracy to 99.9%</p>
-                    <p>Developed an end-to-end automated annotation system for object detection tasks using Python, OpenCV, and custom ML models. Integrated AWS S3 for scalable data storage and processing.</p>
+                    <h3>🏷️ Data Annotation Workflow System</h3>
+                    <p>Developed Python scripts to streamline image annotation processes and maintain quality control standards. Implemented automated file organization and progress tracking for annotation projects.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">AWS S3</span>
+                        <span class="tech-tag">File Processing</span>
                         <span class="tech-tag">JSON</span>
+                        <span class="tech-tag">Quality Control</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>📊 AI-Powered Data Quality Assessment Tool</h3>
-                    <p><strong>Impact:</strong> Identified and corrected 95% of data inconsistencies automatically</p>
-                    <p>Built a comprehensive data validation system that automatically detects annotation errors, validates label consistency, and generates detailed quality reports for large-scale datasets.</p>
+                    <h3>📊 Statistical Analysis Dashboard</h3>
+                    <p>Created automated reporting system using SPSS and Excel for market research data analysis. Implemented cross-tabulation and statistical testing procedures for survey data.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">Matplotlib</span>
-                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">IBM SPSS</span>
+                        <span class="tech-tag">Advanced Excel</span>
+                        <span class="tech-tag">Statistical Analysis</span>
+                        <span class="tech-tag">Data Visualization</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>🏦 Machine Learning Loan Prediction System</h3>
-                    <p><strong>Impact:</strong> Achieved 87% prediction accuracy with real-world banking data</p>
-                    <p>Implemented a comprehensive loan eligibility prediction model using multiple ML algorithms including Random Forest, SVM, and Logistic Regression. Featured data preprocessing, feature engineering, and model optimization.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">Jupyter</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">Seaborn</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>🛒 Full-Stack E-commerce Platform</h3>
-                    <p><strong>Impact:</strong> Complete online shopping solution with 500+ product catalog</p>
-                    <p>Developed a responsive e-commerce website with user authentication, shopping cart functionality, payment integration, inventory management, and admin dashboard.</p>
+                    <h3>🛒 E-commerce Website Project</h3>
+                    <p>Built a complete e-commerce platform during web development training, featuring product catalog, shopping cart functionality, and user management system.</p>
                     <div class="project-tech">
                         <span class="tech-tag">PHP</span>
                         <span class="tech-tag">MySQL</span>
                         <span class="tech-tag">HTML/CSS</span>
-                        <span class="tech-tag">Bootstrap</span>
                         <span class="tech-tag">JavaScript</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>🔍 NLP Text Classification System</h3>
-                    <p><strong>Impact:</strong> Automated text categorization with 92% accuracy</p>
-                    <p>Built a natural language processing system for automated text classification and sentiment analysis using BERT transformers and custom deep learning models.</p>
+                    <h3>🔍 Data Validation Tool</h3>
+                    <p>Developed automated data validation scripts for e-commerce product information, ensuring data accuracy and consistency across large datasets.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
-                        <span class="tech-tag">NLTK</span>
-                        <span class="tech-tag">Transformers</span>
-                        <span class="tech-tag">PyTorch</span>
-                        <span class="tech-tag">Flask API</span>
+                        <span class="tech-tag">Data Validation</span>
+                        <span class="tech-tag">CSV Processing</span>
+                        <span class="tech-tag">Error Detection</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>📈 Real-time Data Analytics Dashboard</h3>
-                    <p><strong>Impact:</strong> Provided real-time insights for 50+ business metrics</p>
-                    <p>Created an interactive dashboard for real-time data monitoring and visualization using Python, Streamlit, and various data visualization libraries.</p>
+                    <h3>📈 Survey Data Analysis</h3>
+                    <p>Conducted comprehensive analysis of consumer behavior surveys using SPSS, creating detailed reports with statistical insights and recommendations.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Streamlit</span>
-                        <span class="tech-tag">Plotly</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">SPSS</span>
+                        <span class="tech-tag">Survey Analysis</span>
+                        <span class="tech-tag">Statistical Testing</span>
+                        <span class="tech-tag">Report Generation</span>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Achievements Section -->
-        <section id="achievements" class="achievements-section">
-            <div class="container">
-                <h2 class="section-title">Key Achievements & Metrics</h2>
-                <div class="achievements-grid">
-                    <div class="achievement-card">
-                        <div class="achievement-icon">🎯</div>
-                        <div class="achievement-number">99.9%</div>
-                        <p>Annotation Accuracy</p>
-                    </div>
-                    <div class="achievement-card">
-                        <div class="achievement-icon">⚡</div>
-                        <div class="achievement-number">60%</div>
-                        <p>Time Reduction via Automation</p>
-                    </div>
-                    <div class="achievement-card">
-                        <div class="achievement-icon">👥</div>
-                        <div class="achievement-number">15+</div>
-                        <p>Team Members Managed</p>
-                    </div>
-                    <div class="achievement-card">
-                        <div class="achievement-icon">💰</div>
-                        <div class="achievement-number">$100K+</div>
-                        <p>Projects Value Delivered</p>
-                    </div>
-                    <div class="achievement-card">
-                        <div class="achievement-icon">📊</div>
-                        <div class="achievement-number">1M+</div>
-                        <p>Data Points Annotated</p>
-                    </div>
-                    <div class="achievement-card">
-                        <div class="achievement-icon">🏆</div>
-                        <div class="achievement-number">50+</div>
-                        <p>Successful Projects</p>
+                <div class="project-card">
+                    <h3>🎯 Annotation Quality Control System</h3>
+                    <p>Implemented quality assurance processes for annotation projects, including inter-annotator agreement calculations and error detection protocols.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Quality Metrics</span>
+                        <span class="tech-tag">Data Processing</span>
+                        <span class="tech-tag">Team Coordination</span>
                     </div>
                 </div>
             </div>
@@ -1237,29 +880,14 @@
                 <div class="language-item">
                     <div class="language-name">English</div>
                     <div class="language-level">Professional Working Proficiency</div>
-                    <div class="skill-level">
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%"></div>
-                        </div>
-                    </div>
                 </div>
                 <div class="language-item">
                     <div class="language-name">Hindi</div>
                     <div class="language-level">Native Speaker</div>
-                    <div class="skill-level">
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 100%"></div>
-                        </div>
-                    </div>
                 </div>
                 <div class="language-item">
                     <div class="language-name">Bhojpuri</div>
                     <div class="language-level">Conversational</div>
-                    <div class="skill-level">
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -1268,14 +896,13 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Priyam Kumari. All rights reserved. | Senior Annotation Engineer & AI Tool Specialist</p>
+            <p>&copy; 2025 Priyam Kumari. All rights reserved. | Data Annotation Engineer & Team Lead</p>
             <div class="social-links">
                 <a href="mailto:priyam.kumari.tiwari@gmail.com" class="social-link" title="Email">✉️</a>
-                <a href="https://linkedin.com/in/priyamkumari" class="social-link" title="LinkedIn">💼</a>
+                <a href="https://linkedin.com/in/priyam-t-8b63621ab" class="social-link" title="LinkedIn">💼</a>
                 <a href="https://github.com/Priyam-cloud" class="social-link" title="GitHub">💻</a>
                 <a href="https://my-portfolio-4l95.onrender.com" class="social-link" title="Portfolio">🌐</a>
             </div>
-            <p><strong>Keywords:</strong> Data Annotation Engineer, Machine Learning, Python Developer, AI Specialist, Computer Vision, NLP, Quality Assurance, Project Management, AWS, Automation</p>
         </div>
     </footer>
 
@@ -1286,9 +913,6 @@
         </button>
         <button class="download-btn" onclick="downloadTXT()" title="Download Text Resume">
             📝
-        </button>
-        <button class="download-btn" onclick="downloadWord()" title="Download Word Resume">
-            📋
         </button>
     </div>
 
@@ -1338,12 +962,6 @@
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
-                    
-                    // Animate skill progress bars
-                    const progressBars = entry.target.querySelectorAll('.skill-progress');
-                    progressBars.forEach(bar => {
-                        bar.classList.add('animate');
-                    });
                 }
             });
         }, observerOptions);
@@ -1358,14 +976,12 @@
         // Download PDF function
         async function downloadPDF() {
             try {
-                // Show loading notification
                 showNotification('Generating PDF... Please wait', 'info');
                 
                 const { jsPDF } = window.jspdf;
                 const pdf = new jsPDF('p', 'mm', 'a4');
                 
-                // Create ATS-friendly resume content
-                const resumeContent = generateATSContent();
+                const resumeContent = generateRealisticATSContent();
                 
                 // Set font and styling
                 pdf.setFont('helvetica', 'normal');
@@ -1377,7 +993,7 @@
                 
                 pdf.setFontSize(12);
                 pdf.setFont('helvetica', 'normal');
-                pdf.text('Senior Annotation Engineer & AI Tool Specialist', 105, 28, { align: 'center' });
+                pdf.text('Data Annotation Engineer | Team Lead | Data Analyst', 105, 28, { align: 'center' });
                 
                 // Add contact info
                 pdf.setFontSize(10);
@@ -1400,7 +1016,6 @@
                     const lines = section.split('\n');
                     const title = lines[0];
                     
-                    // Check if we need a new page
                     if (yPos > 250) {
                         pdf.addPage();
                         yPos = 20;
@@ -1419,7 +1034,6 @@
                     for (let i = 1; i < lines.length; i++) {
                         const line = lines[i];
                         if (line.trim()) {
-                            // Handle long lines
                             const splitLines = pdf.splitTextToSize(line, 170);
                             splitLines.forEach(splitLine => {
                                 if (yPos > 280) {
@@ -1434,8 +1048,7 @@
                     yPos += 5;
                 });
                 
-                // Save the PDF
-                pdf.save('Priyam_Kumari_Resume_ATS_Optimized.pdf');
+                pdf.save('Priyam_Kumari_Resume_Data_Annotation_Engineer.pdf');
                 showNotification('PDF downloaded successfully!', 'success');
                 
             } catch (error) {
@@ -1444,70 +1057,67 @@
             }
         }
 
-        // Generate ATS-optimized content
-        function generateATSContent() {
+        // Generate realistic ATS-optimized content
+        function generateRealisticATSContent() {
             return `PROFESSIONAL SUMMARY
-Highly skilled Senior Annotation Engineer with 3+ years of expertise in machine learning, computer vision, natural language processing, and AI model training. Proven track record of improving ML model accuracy by 40% through high-quality data annotation and automated workflows. Expert in Python programming, project management, and quality assurance with experience managing $100K+ annotation projects.
+Experienced Data Annotation Engineer with 3+ years of expertise in data labeling, quality assurance, and team coordination. Proven ability to manage annotation projects while maintaining high accuracy standards. Skilled in Python automation, statistical analysis using SPSS, and advanced Excel operations. Strong background in leading annotation teams and implementing quality control processes.
 
 CORE COMPETENCIES
-• Data Annotation & Labeling (Image, Video, Text) • Machine Learning & Deep Learning
-• Computer Vision & Natural Language Processing • Python Programming & Automation
-• Quality Assurance & Project Management • AWS Cloud Services & S3
-• TensorFlow, PyTorch, Scikit-learn • Team Leadership (15+ members)
-• Agile Methodology & Process Optimization • Statistical Analysis & Data Visualization
+• Data Annotation & Labeling (Image, Text, Video) • Team Leadership & Project Coordination
+• Python Programming & Automation Scripts • IBM SPSS Statistical Analysis
+• Quality Assurance & Process Improvement • Advanced Excel Functions & Data Processing
+• JSON Data Processing & File Management • LabelImg & VGG Image Annotator Tools
+• Cross-functional Team Collaboration • Research Methodology & Survey Analysis
 
 PROFESSIONAL EXPERIENCE
 
 Senior Annotation Engineer | KoiReader Technologies | May 2023 - Present
-• Led end-to-end data annotation processes for computer vision and NLP projects, improving AI model accuracy by 40%
-• Developed Python automation scripts for image processing, reducing manual annotation time by 60 hours/week
-• Managed cross-functional teams of 15+ annotators, delivering projects within $100K+ budget constraints
-• Implemented quality assurance protocols achieving 99.9% annotation accuracy across all datasets
-• Optimized annotation workflows using JSON metadata processing and AWS S3 integration
-• Collaborated with ML Engineers and Data Scientists to define annotation guidelines and improve model performance
+• Lead data annotation projects for computer vision and NLP applications, maintaining quality standards
+• Develop Python automation scripts for repetitive annotation tasks and workflow optimization
+• Coordinate annotation teams and establish guidelines for consistent data labeling practices
+• Process large datasets using JSON metadata and organize files for efficient project management
+• Collaborate with development teams to understand requirements and deliver quality annotated data
+• Manage cloud-based data storage and maintain organized file structures for project accessibility
 
 Data Analyst | Excavate Research & Analysis Pvt. Ltd. | May 2022 - April 2023
-• Analyzed market research data for 50+ clients, creating comprehensive statistical insights and tabulations
-• Interpreted survey responses from 10,000+ participants to assess consumer behavior trends
-• Developed data visualization dashboards using Excel and Python, improving reporting efficiency by 35%
-• Collaborated with research teams to design survey methodologies and ensure data quality standards
+• Analyzed market research data using IBM SPSS for statistical analysis and reporting
+• Processed survey responses and consumer behavior data using appropriate statistical methods
+• Created comprehensive cross-tabulations and data summaries for client requirements
+• Collaborated with research teams to ensure data quality and methodological accuracy
+• Prepared statistical reports and client presentations based on analysis findings
+• Maintained detailed documentation of analysis procedures and methodologies
 
 Junior Data Annotator | Digiyoda Pvt. Ltd. | Jan 2021 - April 2021
-• Conducted image and text annotation for social media fraud detection, processing 5,000+ images weekly
-• Verified e-commerce product data including categories, pricing, and URL validation with 98% accuracy
-• Collaborated with AI development teams to enhance dataset quality for machine learning models
+• Performed accurate image and text annotation for machine learning projects
+• Validated e-commerce product data including categories, pricing, and URL verification
+• Maintained detailed progress logs and quality metrics for annotation tasks
+• Collaborated with team members to resolve annotation conflicts and ensure consistency
+• Used various annotation platforms and tools for different project requirements
 
 TECHNICAL SKILLS
-Programming Languages: Python, SQL, JavaScript, HTML/CSS, PHP, JSON
-Machine Learning: TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn
-Cloud & Tools: AWS S3, Google Cloud, Docker, Git/GitHub, Jupyter Notebook, Linux
-Annotation Tools: LabelImg, VGG Image Annotator, Labelbox, Amazon SageMaker, CVAT, Prodigy
-Data Analysis: Advanced Excel, IBM SPSS, Tableau, Power BI, Statistical Analysis
-Specializations: Computer Vision, Natural Language Processing, Deep Learning, Quality Assurance
+Programming: Python, HTML/CSS, JavaScript, PHP, JSON Processing, SQL Basics
+Data Analysis: IBM SPSS, Advanced Excel, Statistical Analysis, Cross-tabulation, Data Visualization
+Annotation Tools: LabelImg, VGG Image Annotator, Web-based Annotation Platforms
+Development Tools: Jupyter Notebook, VS Code, Git/GitHub, File Management Systems
+Specializations: Data Annotation, Quality Control, Team Coordination, Process Documentation
 
 EDUCATION
 Bachelor of Engineering in Computer Science | Deenbandhu Chhotu Ram University of Science and Technology
 Murthal, Sonepat, Haryana | Sep 2018 - April 2022 | CGPA: 7.8/10
+Relevant Coursework: Data Structures, Algorithms, Database Management, Software Engineering
 
 CERTIFICATIONS
-• IBM Data Analytics Professional Certificate | IBM SkillsBuild | 2023
-• Full Stack Web Development Certificate | Internshala Trainings | 2022
-• AWS Cloud Practitioner (In Progress) | Amazon Web Services | 2025
-• Quantum Computing Fundamentals | IBM Qiskit | 2023
+• IBM Data Analytics with Python and SQL | IBM SkillsBuild | 2023
+• Full Stack Web Development | Internshala Trainings | 2022
+• Quantum Computing Introduction | IBM Qiskit | 2023
 
 KEY PROJECTS
-• Automated Computer Vision Annotation Pipeline - Reduced annotation time by 60%, improved accuracy to 99.9%
-• AI-Powered Data Quality Assessment Tool - Identified and corrected 95% of data inconsistencies automatically
-• Machine Learning Loan Prediction System - Achieved 87% prediction accuracy with real-world banking data
-• Full-Stack E-commerce Platform - Complete online shopping solution with 500+ product catalog
-• NLP Text Classification System - Automated text categorization with 92% accuracy using BERT transformers
-
-ACHIEVEMENTS
-• 99.9% annotation accuracy across all projects
-• 60% reduction in manual annotation time through automation
-• Successfully managed 15+ team members and $100K+ project budgets
-• Processed and annotated 1M+ data points across various domains
-• Delivered 50+ successful AI/ML annotation projects
+• Data Annotation Workflow System - Python scripts for streamlined annotation processes
+• Statistical Analysis Dashboard - SPSS and Excel automation for market research analysis
+• E-commerce Website - Complete web platform with product management functionality
+• Data Validation Tool - Automated validation scripts for product information accuracy
+• Survey Data Analysis - Comprehensive consumer behavior analysis using SPSS
+• Annotation Quality Control System - QA processes and inter-annotator agreement metrics
 
 LANGUAGES
 English (Professional Working Proficiency), Hindi (Native), Bhojpuri (Conversational)`;
@@ -1515,34 +1125,18 @@ English (Professional Working Proficiency), Hindi (Native), Bhojpuri (Conversati
 
         // Download TXT function
         function downloadTXT() {
-            const content = generateATSContent();
+            const content = generateRealisticATSContent();
             const element = document.createElement('a');
             const file = new Blob([content], {type: 'text/plain'});
             element.href = URL.createObjectURL(file);
-            element.download = 'Priyam_Kumari_Resume_ATS_Optimized.txt';
+            element.download = 'Priyam_Kumari_Resume_Data_Annotation_Engineer.txt';
             document.body.appendChild(element);
             element.click();
             document.body.removeChild(element);
             showNotification('TXT file downloaded successfully!', 'success');
         }
 
-        // Download Word function (Creates RTF format compatible with Word)
-        function downloadWord() {
-            const content = generateATSContent();
-            const rtfContent = `{\\rtf1\\ansi\\deff0 {\\fonttbl {\\f0 Times New Roman;}}
-\\f0\\fs24 ${content.replace(/\n/g, '\\par ')}}`;
-            
-            const element = document.createElement('a');
-            const file = new Blob([rtfContent], {type: 'application/rtf'});
-            element.href = URL.createObjectURL(file);
-            element.download = 'Priyam_Kumari_Resume_ATS_Optimized.rtf';
-            document.body.appendChild(element);
-            element.click();
-            document.body.removeChild(element);
-            showNotification('Word document downloaded successfully!', 'success');
-        }
-
-        // Enhanced notification function
+        // Notification function
         function showNotification(message, type = 'success') {
             const notification = document.createElement('div');
             notification.textContent = message;
@@ -1564,7 +1158,6 @@ English (Professional Working Proficiency), Hindi (Native), Bhojpuri (Conversati
                 box-shadow: 0 4px 15px rgba(0,0,0,0.2);
                 z-index: 10000;
                 font-weight: 500;
-                animation: slideIn 0.3s ease;
                 max-width: 300px;
                 word-wrap: break-word;
             `;
@@ -1572,323 +1165,16 @@ English (Professional Working Proficiency), Hindi (Native), Bhojpuri (Conversati
             document.body.appendChild(notification);
             
             setTimeout(() => {
-                notification.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => {
-                    if (document.body.contains(notification)) {
-                        document.body.removeChild(notification);
-                    }
-                }, 300);
+                if (document.body.contains(notification)) {
+                    document.body.removeChild(notification);
+                }
             }, type === 'info' ? 5000 : 3000);
         }
 
-        // Add CSS animations for notifications
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideIn {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-            @keyframes slideOut {
-                from { transform: translateX(0); opacity: 1; }
-                to { transform: translateX(100%); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Initialize typing effect when page loads
+        // Initialize animations
         window.addEventListener('load', function() {
-            const heroTitle = document.querySelector('.hero h1');
-            const heroText = document.querySelector('.hero p');
-            
-            setTimeout(() => {
-                typeWriter(heroTitle, 'Priyam Kumari', 150);
-            }, 500);
-            
-            setTimeout(() => {
-                typeWriter(heroText, 'Senior Annotation Engineer & AI Tool Specialist | Machine Learning Expert | Python Developer', 50);
-            }, 2500);
-        });
-
-        // Typing effect function
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        // Particle animation for hero section
-        function createParticles() {
-            const hero = document.querySelector('.hero');
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.cssText = `
-                    position: absolute;
-                    width: 4px;
-                    height: 4px;
-                    background: rgba(255, 215, 0, 0.7);
-                    border-radius: 50%;
-                    animation: float ${Math.random() * 3 + 2}s infinite ease-in-out;
-                    left: ${Math.random() * 100}%;
-                    top: ${Math.random() * 100}%;
-                    animation-delay: ${Math.random() * 2}s;
-                `;
-                hero.appendChild(particle);
-            }
-        }
-
-        // Add particle float animation
-        const particleStyle = document.createElement('style');
-        particleStyle.textContent += `
-            @keyframes float {
-                0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
-                50% { transform: translateY(-20px) rotate(180deg); opacity: 0.5; }
-            }
-        `;
-        document.head.appendChild(particleStyle);
-
-        // Initialize particles
-        createParticles();
-
-        // Interactive background for sections
-        document.querySelectorAll('section').forEach(section => {
-            section.addEventListener('mousemove', function(e) {
-                const rect = section.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const gradient = `radial-gradient(circle at ${x}px ${y}px, rgba(102, 126, 234, 0.1) 0%, transparent 50%)`;
-                section.style.background = `white, ${gradient}`;
-            });
-            
-            section.addEventListener('mouseleave', function() {
-                section.style.background = 'white';
-            });
-        });
-
-        // Scroll progress indicator
-        const progressBar = document.createElement('div');
-        progressBar.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 4px;
-            background: linear-gradient(90deg, #ff6b6b, #ffd700);
-            z-index: 9999;
-            transition: width 0.3s ease;
-        `;
-        document.body.appendChild(progressBar);
-
-        window.addEventListener('scroll', function() {
-            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            progressBar.style.width = scrolled + '%';
-        });
-
-        // Add tilt effect to cards
-        document.querySelectorAll('.project-card, .skill-category, .experience-item').forEach(card => {
-            card.addEventListener('mousemove', function(e) {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 10;
-                const rotateY = (centerX - x) / 10;
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
-            });
-        });
-
-        // Smooth reveal animation for elements
-        const revealElements = document.querySelectorAll('.experience-item, .project-card, .skill-category');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0) scale(1)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        revealElements.forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(50px) scale(0.9)';
-            el.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-            revealObserver.observe(el);
-        });
-
-        // Add ripple effect to buttons
-        document.querySelectorAll('.btn, .download-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                const ripple = document.createElement('span');
-                const rect = btn.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-                
-                ripple.style.cssText = `
-                    position: absolute;
-                    width: ${size}px;
-                    height: ${size}px;
-                    left: ${x}px;
-                    top: ${y}px;
-                    background: rgba(255, 255, 255, 0.4);
-                    border-radius: 50%;
-                    transform: scale(0);
-                    animation: ripple 0.6s linear;
-                    pointer-events: none;
-                `;
-                
-                btn.style.position = 'relative';
-                btn.style.overflow = 'hidden';
-                btn.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-            });
-        });
-
-        // Add ripple animation
-        const rippleStyle = document.createElement('style');
-        rippleStyle.textContent += `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(rippleStyle);
-
-        // Enhanced mobile responsiveness
-        function handleResize() {
-            const isMobile = window.innerWidth <= 768;
-            const skillCategories = document.querySelectorAll('.skill-category');
-            const projectCards = document.querySelectorAll('.project-card');
-            
-            if (isMobile) {
-                skillCategories.forEach(category => {
-                    category.style.transform = 'none';
-                });
-                projectCards.forEach(card => {
-                    card.style.transform = 'none';
-                });
-            }
-        }
-
-        window.addEventListener('resize', handleResize);
-        handleResize(); // Call on load
-
-        // Add loading animation
-        const loader = document.createElement('div');
-        loader.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            transition: opacity 0.5s ease;
-        `;
-        loader.innerHTML = `
-            <div style="
-                width: 50px;
-                height: 50px;
-                border: 5px solid rgba(255, 255, 255, 0.3);
-                border-top: 5px solid white;
-                border-radius: 50%;
-                animation: spin 1s linear infinite;
-            "></div>
-        `;
-        document.body.appendChild(loader);
-
-        // Add spin animation
-        const spinStyle = document.createElement('style');
-        spinStyle.textContent += `
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(spinStyle);
-
-        // Remove loader when page is loaded
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.remove();
-                }, 500);
-            }, 1500);
-        });
-
-        // Add dynamic theme switching
-        let isDarkMode = false;
-        
-        function toggleTheme() {
-            isDarkMode = !isDarkMode;
-            const root = document.documentElement;
-            
-            if (isDarkMode) {
-                root.style.setProperty('--bg-color', '#1a1a1a');
-                root.style.setProperty('--text-color', '#ffffff');
-                root.style.setProperty('--card-bg', '#2d2d2d');
-            } else {
-                root.style.setProperty('--bg-color', '#ffffff');
-                root.style.setProperty('--text-color', '#333333');
-                root.style.setProperty('--card-bg', '#f8f9fa');
-            }
-        }
-
-        // Add theme toggle button
-        const themeToggle = document.createElement('button');
-        themeToggle.innerHTML = '🌓';
-        themeToggle.style.cssText = `
-            position: fixed;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            z-index: 998;
-            transition: all 0.3s ease;
-        `;
-        themeToggle.addEventListener('click', toggleTheme);
-        document.body.appendChild(themeToggle);
-
-        // Enhanced scroll effects
-        window.addEventListener('scroll', function() {
-            const scrolled = window.scrollY;
-            const parallax = document.querySelector('.hero');
-            if (parallax) {
-                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
+            // Add any initialization code here
         });
     </script>
 </body>
 </html>
-
-
